@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+//import Stampa from './Stampa';
+import Post from './FacebookPost'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+
+   const [ posts, setPosts] = useState([
+    {author : 'Billy', title: 'Effect of Nature'},
+    {author : 'Uma', title:"Don't forget to ask help"},
+    {author : 'Joe', title: "Hip Hop in Italy in my 90's"},
+    {author : 'Frank', title: 'No need to put a title'},
+    {author : 'John', title: 'Imagine a brotherhood of men'},
+   ])
+
+  return(
+      <div style={{ textAlign: 'center' }} >
+
+      <h1> HOME </h1>
+
+        {posts.map ( (post, index) => (
+          <Post key={index} author={post.author} title={post.title} />
+        ))}
+ 
+      </div>
+  )
+  
+  
 }
 
 export default App;
