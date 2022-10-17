@@ -19,7 +19,17 @@ button{
   background-color: cadetblue;
   min-height: 35px;
   width: 75px;    
-  border-radius: 9px;
+  border-radius: 20px;
   border: 1px solid transparent;
   cursor: pointer;
+}
+button:active{
+  background-color: #3c8486;
+  color: white;
+  position: relative;
+  top: 1px;
+}
+button:hover{
+  background-color: #4b7d7f;
+  color: white;
 }
